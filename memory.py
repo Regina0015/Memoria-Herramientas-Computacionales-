@@ -79,7 +79,7 @@ def draw():
         write(tiles[mark], font=('Arial', 30, 'normal'))
     up()
     goto(-180, 180)
-    color('blue')
+    color('black')
     write(f"Taps: {state['taps']}", font=('Arial', 16, 'normal'))
 
     update()
