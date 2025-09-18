@@ -16,7 +16,7 @@ from freegames import path
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
-state = {'mark': None}
+state = {'mark': None, 'taps': 0} 
 hide = [True] * 64
 
 
