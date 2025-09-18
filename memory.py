@@ -77,6 +77,14 @@ def draw():
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
+    # Detectar si se han revelado todos los cuadros
+    if all(not h for h in hide):
+        goto(0, -220)
+        color('green')
+        write("¡Ganaste!", align="center", font=('Arial', 24, 'bold'))
+        update()
+        return
+
     update()
     ontimer(draw, 100)
 
