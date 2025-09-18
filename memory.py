@@ -47,6 +47,7 @@ def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     spot = index(x, y)
     mark = state['mark']
+    state['taps'] += 1  
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
@@ -76,6 +77,10 @@ def draw():
         goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
+    up()
+    goto(-180, 180)
+    color('blue')
+    write(f"Taps: {state['taps']}", font=('Arial', 16, 'normal'))
 
     update()
     ontimer(draw, 100)
